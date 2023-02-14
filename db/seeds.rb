@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'net/http'
+require 'json'
+
+api = 'https://www.cheapshark.com/api/1.0/deals'
+
+uri = URI(api)
+response = Net::HTTP.get(uri)
+
+games = JSON.parse(response)
+
+puts games
