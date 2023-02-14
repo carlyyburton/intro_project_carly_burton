@@ -15,4 +15,14 @@ response = Net::HTTP.get(uri)
 
 games = JSON.parse(response)
 
-puts games
+Game.destroy_all
+
+games.each do |game|
+  game_sale = Game.create!( title: game['title'],
+                            sale_price: game['salePrice'],
+                            normal_price: game['normalPrice'],
+                            release_date: game['releaseDate'],
+                            steam_rating_percent: game['steamRatingPercent'] ,
+                            steam_rating_count: game['steamRatingCount'],
+                            image: game['thumb'])
+end
