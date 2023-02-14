@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  sale_price: 9.99
+  normal_price: 9.99
+  release_date: 2023-02-13
+  steam_rating_percent: 1
+  steam_rating_count: 1
+  image: MyString
+
+two:
+  title: MyString
+  sale_price: 9.99
+  normal_price: 9.99
+  release_date: 2023-02-13
+  steam_rating_percent: 1
+  steam_rating_count: 1
+  image: MyString
