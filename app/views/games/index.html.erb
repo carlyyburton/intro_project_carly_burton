@@ -1,14 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Games</h1>
+<h1>PC Games On Sale</h1>
 
-<div id="games">
-  <% @games.each do |game| %>
-    <%= render game %>
-    <p>
-      <%= link_to "Show this game", game %>
-    </p>
-  <% end %>
-</div>
+<ul>
+<% @games = Game.order("title ASC").where("steam_rating_count > 0").each do |game| %>
+  <h3><%= game.title %></h3>
+  <li>Sale Price: $<%= game.sale_price %></li>
+  <li>Normal Price: $<%= game.normal_price %></li>
+  <li>Release Date: <%= Time.at(game.release_date).strftime("%m/%d/%Y") %></li>
+  <li>Steam Rating: <%= game.steam_rating_percent %></li>
+  <li>Steam Rating Count: <%= game.steam_rating_count %></li>
+  <%= image_tag game.image, style: 'width: 200px' %>
+<% end %>
+</ul>
 
 <%= link_to "New game", new_game_path %>
