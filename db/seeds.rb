@@ -24,5 +24,6 @@ games.each do |game|
                             release_date: game['releaseDate'],
                             steam_rating_percent: game['steamRatingPercent'] ,
                             steam_rating_count: game['steamRatingCount'],
+                            metacritic_link: game['metacriticLink'],
                             image: game['thumb'])
 end
