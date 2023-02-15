@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <h2 class="navbar-text">PC Game Sales</h2><br>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <span class="navbar-text"><%= link_to "Home", games_path %></span>
+        </li>
+        <li class="nav-item">
+          <span class="navbar-text"><%= link_to "Games", game_sales_path %></span>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search By Game Title" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="sale">
+  <h3>Games Currently On Sale:</h3>
+  <br>
+  <ul>
+    <% @games = Game.order("title ASC").each do |game| %>
+      <h4><%= game.title %></h4>
+      <li>Sale Price: $<%= game.sale_price %></li>
+      <li>Normal Price: $<%= game.normal_price %></li>
+      <li>Savings: <%= number_with_precision(game.savings, precision: 1) %>%</li>
+      <li>Release Date: <%= Time.at(game.release_date).strftime("%m/%d/%Y") %></li>
+      <li>Steam Rating: <%= game.steam_rating_percent %></li>
+      <li>Steam Rating Count: <%= game.steam_rating_count %></li>
+      <%= image_tag game.image, style: 'width: 300px' %>
+      <br>
+      <br>
+    <% end %>
+  </ul>
+</div>

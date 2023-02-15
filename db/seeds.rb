@@ -22,6 +22,7 @@ games.each do |game|
                             sale_price: game['salePrice'],
                             normal_price: game['normalPrice'],
                             release_date: game['releaseDate'],
+                            savings: game['savings'],
                             steam_rating_percent: game['steamRatingPercent'] ,
                             steam_rating_count: game['steamRatingCount'],
                             metacritic_link: game['metacriticLink'],

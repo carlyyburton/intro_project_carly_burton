@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+.navbar-text{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+  .navbar a{
+    text-decoration: none;
+  }
+
+.about{
+  padding: 20px;
+}
+
+.sale{
+  padding: 20px;
+}
+
+  .sale ul li{
+    list-style: none;
+  }

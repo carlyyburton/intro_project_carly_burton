@@ -1,17 +1,29 @@
-<p style="color: green"><%= notice %></p>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <h2 class="navbar-text">PC Game Sales</h2><br>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <span class="navbar-text"><%= link_to "Home", games_path %></span>
+        </li>
+        <li class="nav-item">
+          <span class="navbar-text"><%= link_to "Games", game_sales_path %></span>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search By Game Title" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
 
-<h1>PC Games On Sale</h1>
+<div class="about">
+  <h3>About</h3>
+  <p>This app uses the CheapShark API to display PC games that are on sale. Browse through the games or search for a specific game.
+  The information includes the game title, sale price, normal, price, percentage saved, and the steam ratings!</p>
+</div>
 
-<ul>
-<% @games = Game.order("title ASC").where("steam_rating_count > 0").each do |game| %>
-  <h3><%= game.title %></h3>
-  <li>Sale Price: $<%= game.sale_price %></li>
-  <li>Normal Price: $<%= game.normal_price %></li>
-  <li>Release Date: <%= Time.at(game.release_date).strftime("%m/%d/%Y") %></li>
-  <li>Steam Rating: <%= game.steam_rating_percent %></li>
-  <li>Steam Rating Count: <%= game.steam_rating_count %></li>
-  <%= image_tag game.image, style: 'width: 200px' %>
-<% end %>
-</ul>
-
-<%= link_to "New game", new_game_path %>
