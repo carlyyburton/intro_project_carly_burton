@@ -1,9 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <h2 class="navbar-text">PC Game Sales</h2><br>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -11,6 +8,9 @@
         </li>
         <li class="nav-item">
           <span class="navbar-text"><%= link_to "Games", game_sales_path %></span>
+        </li>
+        <li class="nav-item">
+          <span class="navbar-text"><%= link_to "Faker", game_sales_path %></span>
         </li>
       </ul>
       <form class="d-flex" role="search">
@@ -23,7 +23,8 @@
 
 <div class="about">
   <h3>About</h3>
-  <p>This app uses the CheapShark API to display PC games that are on sale. Browse through the games or search for a specific game.
+  <p>This app uses the CheapShark API to display PC games that are currently on sale. Browse through the games or search for a specific game.
   The information includes the game title, sale price, normal, price, percentage saved, and the steam ratings!</p>
+  <p>The faker section of this app contains faker generated data. This includes a game title, genre, and platform!</p>
 </div>
 

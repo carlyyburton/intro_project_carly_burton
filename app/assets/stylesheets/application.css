@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+.navbar{
+  width: auto;
+}
 .navbar-text{
   padding-left: 10px;
   padding-right: 10px;
@@ -24,12 +27,19 @@
 
 .about{
   padding: 20px;
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 .sale{
   padding: 20px;
+  text-align: center;
 }
 
   .sale ul li{
     list-style: none;
+    padding: 2px;
+    text-align: center;
   }
+
