@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'net/http'
 require 'json'
+require 'faker'
 
 api = 'https://www.cheapshark.com/api/1.0/deals'
 
@@ -27,4 +28,12 @@ games.each do |game|
                             steam_rating_count: game['steamRatingCount'],
                             metacritic_link: game['metacriticLink'],
                             image: game['thumb'])
+end
+
+FakeGame.destroy_all
+
+25.times do
+  fake_game = FakeGame.create!( title: Faker::Game.title,
+                                genre: Faker::Game.genre,
+                                platform: Faker::Game.platform)
 end
