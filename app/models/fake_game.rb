@@ -1,0 +1,2 @@
+class FakeGame < ApplicationRecord
+end

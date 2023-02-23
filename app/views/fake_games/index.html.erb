@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Fake games</h1>
+
+<div id="fake_games">
+  <% @fake_games.each do |fake_game| %>
+    <%= render fake_game %>
+    <p>
+      <%= link_to "Show this fake game", fake_game %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New fake game", new_fake_game_path %>

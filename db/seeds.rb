@@ -30,7 +30,7 @@ games.each do |game|
                             image: game['thumb'])
 end
 
-FakeGame.destroy_all
+#FakeGame.destroy_all
 
 25.times do
   fake_game = FakeGame.create!( title: Faker::Game.title,
