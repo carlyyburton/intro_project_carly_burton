@@ -20,14 +20,12 @@
     </div>
   </div>
 </nav>
-
-<div class="sale">
-  <h3>Games Currently On Sale:</h3>
+<div class="faker">
+  <h1>Faker Generated Games</h1>
   <br>
-<ul>
-  <% @games.each do |game| %>
-    <li><%= game.title %></li>
+  <% @fake_games = FakeGame.order("title ASC").each do |fake_game| %>
+    <h3><%= fake_game.title %> - <%= link_to "Show More Info", show_path %></h3>
+    <p>Genre: <%= fake_game.genre %></p>
+    <p>Platform: <%= fake_game.platform %></p>
   <% end %>
-</ul>
-<%= paginate @games %>
 </div>

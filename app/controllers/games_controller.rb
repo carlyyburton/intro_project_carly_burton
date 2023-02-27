@@ -2,8 +2,9 @@ class GamesController < ApplicationController
   before_action :set_game, only: %i[ show edit update destroy ]
 
   # GET /games or /games.json
-  def index
+  def game_sales
     @games = Game.all
+    @games = Kaminari.paginate_array(@games).page(params[:page]).per(10)
   end
 
   # GET /games/1 or /games/1.json

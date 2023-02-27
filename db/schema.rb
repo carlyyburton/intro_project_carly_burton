@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_23_182606) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_27_191100) do
   create_table "fake_games", force: :cascade do |t|
     t.string "title"
     t.string "genre"
     t.string "platform"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "games_id"
+    t.index ["games_id"], name: "index_fake_games_on_games_id"
   end
 
   create_table "games", force: :cascade do |t|
@@ -33,4 +35,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_182606) do
     t.decimal "savings"
   end
 
+  add_foreign_key "fake_games", "games", column: "games_id"
 end
