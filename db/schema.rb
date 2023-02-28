@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_27_191100) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_27_221629) do
   create_table "fake_games", force: :cascade do |t|
     t.string "title"
     t.string "genre"
@@ -33,6 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_191100) do
     t.datetime "updated_at", null: false
     t.string "metacritic_link"
     t.decimal "savings"
+    t.integer "games_id"
   end
 
   add_foreign_key "fake_games", "games", column: "games_id"

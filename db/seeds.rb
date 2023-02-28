@@ -17,6 +17,7 @@ response = Net::HTTP.get(uri)
 games = JSON.parse(response)
 
 Game.destroy_all
+FakeGame.destroy_all
 
 games.each do |game|
   game_sale = Game.create!( title: game['title'],
@@ -30,10 +31,19 @@ games.each do |game|
                             image: game['thumb'])
 end
 
-FakeGame.destroy_all
-
-25.times do
-  fake_game = FakeGame.create!( title: Faker::Game.title,
-                                genre: Faker::Game.genre,
-                                platform: Faker::Game.platform)
+150.times do
+  FakeGame.create!( title: Faker::Game.title,
+                    genre: Faker::Game.genre,
+                    platform: Faker::Game.platform)
 end
+
+api2 = 'https://www.freetogame.com/api/games'
+
+uri2 = URI(api2)
+response2 = Net::HTTP.get(uri2)
+
+free_games = JSON.parse(response2)
+
+puts free_games
+
+

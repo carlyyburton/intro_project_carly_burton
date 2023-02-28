@@ -3,12 +3,13 @@ class GamesController < ApplicationController
 
   # GET /games or /games.json
   def game_sales
-    @games = Game.all
-    @games = Kaminari.paginate_array(@games).page(params[:page]).per(10)
+    @games = Game.all.order("title ASC")
+    @games = Kaminari.paginate_array(@games).page(params[:page]).per(7)
   end
 
   # GET /games/1 or /games/1.json
   def show
+
   end
 
   # GET /games/new

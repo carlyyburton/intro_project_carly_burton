@@ -47,3 +47,17 @@
   text-align: center;
 }
 
+.faker ul li{
+  list-style: none;
+}
+
+.faker span{
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+

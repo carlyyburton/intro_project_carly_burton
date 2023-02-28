@@ -2,8 +2,9 @@ class FakeGamesController < ApplicationController
   before_action :set_fake_game, only: %i[ show edit update destroy ]
 
   # GET /fake_games or /fake_games.json
-  def index
-    @fake_games = FakeGame.all
+  def faker_games
+    @fake_games = FakeGame.all.order("title ASC")
+    @fake_games = Kaminari.paginate_array(@fake_games).page(params[:page]).per(7)
   end
 
   # GET /fake_games/1 or /fake_games/1.json

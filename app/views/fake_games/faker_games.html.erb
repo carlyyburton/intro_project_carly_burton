@@ -7,7 +7,7 @@
           <span class="navbar-text"><%= link_to "Home", games_path %></span>
         </li>
         <li class="nav-item">
-          <span class="navbar-text"><%= link_to "Games", game_sales_path %></span>
+          <span class="navbar-text"><%= link_to "Games On Sale", game_sales_path %></span>
         </li>
         <li class="nav-item">
           <span class="navbar-text"><%= link_to "Faker", faker_games_path %></span>
@@ -21,11 +21,15 @@
   </div>
 </nav>
 <div class="faker">
-  <h1>Faker Generated Games</h1>
+  <h3>Faker Generated Games: <%= FakeGame.count %></h3>
   <br>
-  <% @fake_games = FakeGame.order("title ASC").each do |fake_game| %>
-    <h3><%= fake_game.title %> - <%= link_to "Show More Info", show_path %></h3>
-    <p>Genre: <%= fake_game.genre %></p>
-    <p>Platform: <%= fake_game.platform %></p>
-  <% end %>
+  <ul>
+    <% @fake_games.each do |fake_game| %>
+      <li><span><%= fake_game.title %></span></li>
+      <li>Genre: <%= fake_game.genre %></li>
+      <li>Platform: <%= fake_game.platform %></li>
+      <li>&nbsp</li>
+    <% end %>
+  </ul>
+  <%= paginate @fake_games %>
 </div>

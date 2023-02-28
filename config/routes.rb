@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root 'games#index'
   get 'game_sales', to: 'games#game_sales'
   get 'faker_games', to: 'fake_games#faker_games'
-  get 'show', to: 'fake_games#show'
+  get 'show', to: 'games#show'
   # Defines the root path route ("/")
   # root "articles#index"
 end

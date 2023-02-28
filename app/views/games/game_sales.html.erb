@@ -7,7 +7,7 @@
           <span class="navbar-text"><%= link_to "Home", games_path %></span>
         </li>
         <li class="nav-item">
-          <span class="navbar-text"><%= link_to "Games", game_sales_path %></span>
+          <span class="navbar-text"><%= link_to "Games On Sale", game_sales_path %></span>
         </li>
         <li class="nav-item">
           <span class="navbar-text"><%= link_to "Faker", faker_games_path %></span>
@@ -22,11 +22,19 @@
 </nav>
 
 <div class="sale">
-  <h3>Games Currently On Sale:</h3>
+  <h3>Games Currently On Sale: <%= Game.count %></h3>
   <br>
 <ul>
   <% @games.each do |game| %>
     <li><%= game.title %></li>
+    <li>Sale Price: $<%= game.sale_price %></li>
+    <li>Normal Price: $<%= game.normal_price %></li>
+    <li>Savings: <%= number_with_precision(game.savings, precision: 1) %>%</li>
+    <li>Release Date: <%= Time.at(game.release_date).strftime("%m/%d/%Y") %></li>
+    <li>Steam Rating: <%= game.steam_rating_percent %></li>
+    <li>Steam Rating Count: <%= game.steam_rating_count %></li>
+    <span class="thumbnail"><%= image_tag game.image, style: 'max-width: 300px' %></span>
+    <li>&nbsp</li>
   <% end %>
 </ul>
 <%= paginate @games %>
