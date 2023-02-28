@@ -43,12 +43,19 @@
     text-align: center;
   }
 
+  .sale span{
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
 .faker{
+  padding: 20px;
   text-align: center;
 }
 
 .faker ul li{
   list-style: none;
+  padding: 2px;
 }
 
 .faker span{
@@ -60,4 +67,21 @@
   display: flex;
   justify-content: center;
 }
+
+.free{
+  padding: 20px;
+  text-align: center;
+}
+
+.free span{
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.free ul li{
+  list-style: none;
+  padding: 2px;
+}
+
+
 

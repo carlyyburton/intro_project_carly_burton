@@ -10,14 +10,13 @@ require 'json'
 require 'faker'
 
 api = 'https://www.cheapshark.com/api/1.0/deals'
-
 uri = URI(api)
 response = Net::HTTP.get(uri)
-
 games = JSON.parse(response)
 
 Game.destroy_all
 FakeGame.destroy_all
+FreeGame.destroy_all
 
 games.each do |game|
   game_sale = Game.create!( title: game['title'],
@@ -38,12 +37,14 @@ end
 end
 
 api2 = 'https://www.freetogame.com/api/games'
-
 uri2 = URI(api2)
 response2 = Net::HTTP.get(uri2)
-
 free_games = JSON.parse(response2)
 
-puts free_games
-
-
+free_games.each do |free|
+  FreeGame.create!( title: free['title'],
+                    thumbnail: free['thumbnail'],
+                    description: free['short_description'],
+                    genre: free['genre'],
+                    game_url: free['game_url'])
+end

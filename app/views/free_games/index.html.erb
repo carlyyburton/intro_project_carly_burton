@@ -25,11 +25,18 @@
   </div>
 </nav>
 
-<div class="about">
-  <h3>About</h3>
-  <p>This app uses the CheapShark API to display PC games that are currently on sale. Browse through the games or search for a specific game.
-  The information includes the game title, sale price, normal, price, percentage saved, and the steam ratings!</p>
-  <p>The faker section of this app contains fake games using faker generated data. This includes a game title, genre, and platform!</p>
+<div class="free">
+  <h3>List of Free Games: <%= FreeGame.count %></h3>
+  <br>
+  <ul>
+    <% @free_games.each do |free_game| %>
+      <li><span><%= free_game.title %></span></li>
+      <li>Genre: <%= free_game.genre %></li>
+      <li>Description: <%= free_game.description %></li>
+      <li><%= link_to "Game Link", free_game.game_url %></li>
+      <span class="thumbnail"><%= image_tag free_game.thumbnail, style: 'max-width: 300px' %></span>
+      <li>&nbsp</li>
+    <% end %>
+  </ul>
+  <%= paginate @free_games %>
 </div>
-
-
