@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_28_012444) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_28_205540) do
   create_table "fake_games", force: :cascade do |t|
     t.string "title"
     t.string "genre"
@@ -35,7 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_28_012444) do
     t.string "title"
     t.decimal "sale_price"
     t.decimal "normal_price"
-    t.date "release_date"
+    t.integer "release_date"
     t.integer "steam_rating_percent"
     t.integer "steam_rating_count"
     t.string "image"
