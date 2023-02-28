@@ -34,7 +34,9 @@
     <li>Sale Price: $<%= game.sale_price %></li>
     <li>Normal Price: $<%= game.normal_price %></li>
     <li>Savings: <%= number_with_precision(game.savings, precision: 1) %>%</li>
-    <li>Release Date: <%= Time.at(game.release_date).strftime("%B/%d/%Y") %></li>
+    <% if(game.release_date > 0)%>
+      <li>Release Date: <%= Time.at(game.release_date).strftime("%B/%d/%Y") %></li>
+    <% end %>
     <% if (game.steam_rating_percent > 0) %>
       <li>Steam Rating: <%= game.steam_rating_percent %>%</li>
     <% end %>
