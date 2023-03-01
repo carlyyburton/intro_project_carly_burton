@@ -1,3 +1,4 @@
+<div class="showGame">
 <div id="<%= dom_id game %>">
   <p>
     <strong>Title:</strong>
@@ -6,22 +7,22 @@
 
   <p>
     <strong>Sale price:</strong>
-    <%= game.sale_price %>
+    $<%= game.sale_price %>
   </p>
 
   <p>
     <strong>Normal price:</strong>
-    <%= game.normal_price %>
+    $<%= game.normal_price %>
   </p>
 
   <p>
     <strong>Release date:</strong>
-    <%= game.release_date %>
+    <%= Time.at(game.release_date).strftime("%B/%d/%Y") %>
   </p>
 
   <p>
     <strong>Steam rating percent:</strong>
-    <%= game.steam_rating_percent %>
+    <%= game.steam_rating_percent %>%
   </p>
 
   <p>
@@ -30,26 +31,8 @@
   </p>
 
   <p>
-    <strong>Image:</strong>
-    <%= game.image %>
+    <%= image_tag game.image, style: 'max-width: 300px' %>
   </p>
 
 </div>
-
-<div class="sale">
-  <h3>Games Currently On Sale:</h3>
-  <br>
-  <ul>
-    <% @games = Kaminari.paginate_array(@games).page(params[:page]).each do |game| %>
-      <li><%= game.title %></li>
-      <li>Sale Price: $<%= game.sale_price %></li>
-      <li>Normal Price: $<%= game.normal_price %></li>
-      <li>Savings: <%= number_with_precision(game.savings, precision: 1) %>%</li>
-      <li>Release Date: <%= Time.at(game.release_date).strftime("%m/%d/%Y") %></li>
-      <li>Steam Rating: <%= game.steam_rating_percent %></li>
-      <li>Steam Rating Count: <%= game.steam_rating_count %></li>
-      <span class="thumbnail"><%= image_tag game.image, style: 'width: 300px' %></span>
-      <br>
-      <br>
-    <% end %>
-  </ul>
+</div>

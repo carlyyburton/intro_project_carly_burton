@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <h2 class="navbar-text">PC Game Sales</h2><br>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <span class="navbar-text"><%= link_to "Home", games_path %></span>
+        </li>
+        <li class="nav-item">
+          <span class="navbar-text"><%= link_to "Games On Sale", game_sales_path %></span>
+        </li>
+        <li class="nav-item">
+          <span class="navbar-text"><%= link_to "Free Games", free_games_path %></span>
+        </li>
+        <li class="nav-item">
+          <span class="navbar-text"><%= link_to "Faker", faker_games_path %></span>
+        </li>
+      </ul>
+      <%= render 'search/form' %>
+    </div>
+  </div>
+</nav>

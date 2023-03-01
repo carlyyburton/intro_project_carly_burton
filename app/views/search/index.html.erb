@@ -1,0 +1,21 @@
+<br>
+<div class="results">
+  <h4><%= pluralize(@games.count, "Result") %></h4>
+  <br>
+  <div class="container">
+    <table class="table table-light table-striped">
+      <thead>
+        <tr>
+          <th><%= sort_link(@query, :title, "Sort Titles", default_order: :asc)%></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @games.each do |game| %>
+        <tr>
+          <td><%= link_to game.title, game %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

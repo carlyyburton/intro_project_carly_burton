@@ -83,5 +83,18 @@
   padding: 2px;
 }
 
+.results{
+  text-align: center;
+}
+
+.showGame{
+  margin-top: 0;
+  text-align: center;
+}
+
+.fullGameLink{
+  text-align: center;
+}
+
 
 

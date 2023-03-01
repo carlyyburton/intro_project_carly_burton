@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  get 'search', to: 'search#index'
   get 'free_games/free_games'
-  get 'free_game/free_games'
+  #get 'free_game/free_games'
   resources :fake_games
   resources :games
   resources :free_games
