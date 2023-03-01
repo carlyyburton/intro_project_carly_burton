@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'game_sales', to: 'games#game_sales'
   get 'faker_games', to: 'fake_games#faker_games'
   get 'free_games', to: 'free_games#free_games'
-  get 'games_sales/id', to: 'games#show'
+  get 'free_games/:id', to: 'free_games#show'
   # Defines the root path route ("/")
   # root "articles#index"
 end

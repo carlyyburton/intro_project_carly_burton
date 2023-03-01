@@ -3,12 +3,7 @@
   <br>
     <% @free_games.each do |free_game| %>
     <ul>
-      <li><span><%= free_game.title %></span></li>
-      <li>Genre: <%= free_game.genre %></li>
-      <li>Description: <%= free_game.description %></li>
-      <li><%= link_to "Game Link", free_game.game_url %></li>
-      <li><span class="thumbnail"><%= image_tag free_game.thumbnail, style: 'max-width: 300px' %></span></li>
-      <li>&nbsp;</li>
+      <li><span><%= free_game.title %></span> - <%= link_to "Show", free_game %></li>
     </ul>
     <% end %>
   <%= paginate @free_games %>

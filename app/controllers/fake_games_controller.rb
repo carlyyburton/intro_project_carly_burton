@@ -4,7 +4,7 @@ class FakeGamesController < ApplicationController
   # GET /fake_games or /fake_games.json
   def faker_games
     @fake_games = FakeGame.all.order("title ASC")
-    @fake_games = Kaminari.paginate_array(@fake_games).page(params[:page]).per(7)
+    @fake_games = Kaminari.paginate_array(@fake_games).page(params[:page]).per(15)
   end
 
   # GET /fake_games/1 or /fake_games/1.json

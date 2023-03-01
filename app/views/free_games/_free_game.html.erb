@@ -1,0 +1,27 @@
+<div class="showFreeGame">
+  <div id="<%= dom_id free_game %>">
+    <p>
+      <strong>Title:</strong>
+      <%= free_game.title %>
+    </p>
+
+    <p>
+      <strong>Genre:</strong>
+      <%= free_game.genre %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= free_game.description %>
+    </p>
+
+    <p>
+      <%= link_to "Link to Game Site", free_game.game_url %>
+    </p>
+
+    <p>
+    <%= image_tag free_game.thumbnail, style: 'max-width: 500px' %>
+  </p>
+
+  </div>
+</div>
