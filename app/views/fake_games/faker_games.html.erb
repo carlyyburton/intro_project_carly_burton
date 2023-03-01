@@ -1,13 +1,13 @@
 <div class="faker">
   <h3>Faker Generated Games: <%= FakeGame.count %></h3>
   <br>
-  <ul>
     <% @fake_games.each do |fake_game| %>
-      <li><span><%= fake_game.title %></span></li>
-      <li>Genre: <%= fake_game.genre %></li>
-      <li>Platform: <%= fake_game.platform %></li>
-      <li>&nbsp</li>
+      <ul>
+        <li><span><%= fake_game.title %></span></li>
+        <li>Genre: <%= fake_game.genre %></li>
+        <li>Platform: <%= fake_game.platform %></li>
+        <li>&nbsp;</li>
+      </ul>
     <% end %>
-  </ul>
   <%= paginate @fake_games %>
 </div>

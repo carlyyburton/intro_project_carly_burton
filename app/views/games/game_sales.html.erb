@@ -1,24 +1,24 @@
 <div class="sale">
   <h3>Games Currently On Sale: <%= Game.count %></h3>
   <br>
-<ul>
   <% @games.each do |game| %>
-    <li><span><%= game.title %></span></li>
-    <li>Sale Price: $<%= game.sale_price %></li>
-    <li>Normal Price: $<%= game.normal_price %></li>
-    <li>Savings: <%= number_with_precision(game.savings, precision: 1) %>%</li>
-    <% if(game.release_date > 0)%>
-      <li>Release Date: <%= Time.at(game.release_date).strftime("%B/%d/%Y") %></li>
-    <% end %>
-    <% if (game.steam_rating_percent > 0) %>
-      <li>Steam Rating: <%= game.steam_rating_percent %>%</li>
-    <% end %>
-    <% if (game.steam_rating_count > 0) %>
-      <li>Steam Rating Count: <%= game.steam_rating_count %></li>
-    <% end %>
-    <span class="thumbnail"><%= image_tag game.image, style: 'max-width: 300px' %></span>
-    <li>&nbsp</li>
+    <ul>
+      <li><span><%= game.title %></span></li>
+      <li>Sale Price: $<%= game.sale_price %></li>
+      <li>Normal Price: $<%= game.normal_price %></li>
+      <li>Savings: <%= number_with_precision(game.savings, precision: 1) %>%</li>
+      <% if(game.release_date > 0) %>
+        <li>Release Date: <%= Time.at(game.release_date).strftime("%B/%d/%Y") %></li>
+      <% end %>
+      <% if (game.steam_rating_percent > 0) %>
+        <li>Steam Rating: <%= game.steam_rating_percent %>%</li>
+      <% end %>
+      <% if (game.steam_rating_count > 0) %>
+        <li>Steam Rating Count: <%= game.steam_rating_count %></li>
+      <% end %>
+      <li><span class="thumbnail"><%= image_tag game.image, style: 'max-width: 300px' %></span></li>
+      <li>&nbsp;</li>
+    </ul>
   <% end %>
-</ul>
 <%= paginate @games %>
 </div>

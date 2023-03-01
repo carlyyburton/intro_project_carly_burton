@@ -1,15 +1,15 @@
 <div class="free">
   <h3>List of Free Games: <%= FreeGame.count %></h3>
   <br>
-  <ul>
     <% @free_games.each do |free_game| %>
+    <ul>
       <li><span><%= free_game.title %></span></li>
       <li>Genre: <%= free_game.genre %></li>
       <li>Description: <%= free_game.description %></li>
       <li><%= link_to "Game Link", free_game.game_url %></li>
-      <span class="thumbnail"><%= image_tag free_game.thumbnail, style: 'max-width: 300px' %></span>
-      <li>&nbsp</li>
+      <li><span class="thumbnail"><%= image_tag free_game.thumbnail, style: 'max-width: 300px' %></span></li>
+      <li>&nbsp;</li>
+    </ul>
     <% end %>
-  </ul>
   <%= paginate @free_games %>
 </div>
