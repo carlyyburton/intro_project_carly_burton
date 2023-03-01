@@ -2,9 +2,6 @@
 
 <%= render @fake_game %>
 
-<div>
-  <%= link_to "Edit this fake game", edit_fake_game_path(@fake_game) %> |
-  <%= link_to "Back to fake games", fake_games_path %>
-
-  <%= button_to "Destroy this fake game", @fake_game, method: :delete %>
+<div class="fakerLink">
+  <%= link_to "Back to Faker Generated Games", faker_games_path %>
 </div>

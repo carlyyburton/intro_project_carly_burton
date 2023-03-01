@@ -3,10 +3,7 @@
   <br>
     <% @fake_games.each do |fake_game| %>
       <ul>
-        <li><span><%= fake_game.title %></span></li>
-        <li>Genre: <%= fake_game.genre %></li>
-        <li>Platform: <%= fake_game.platform %></li>
-        <li>&nbsp;</li>
+        <li><span><%= fake_game.title %></span> - <%= link_to "Show", fake_game %></li>
       </ul>
     <% end %>
   <%= paginate @fake_games %>
