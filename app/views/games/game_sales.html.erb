@@ -3,11 +3,8 @@
   <br>
   <% @games.each do |game| %>
     <ul>
-      <li><span><%= game.title %></span> - <%= link_to "Show Full Info", game %></li>
+      <li><span><%= game.title %></span> - <%= link_to "Show", game %></li>
       <li>Savings: <%= number_with_precision(game.savings, precision: 1) %>%</li>
-      <% if(game.release_date > 0) %>
-        <li>Release Date: <%= Time.at(game.release_date).strftime("%B/%d/%Y") %></li>
-      <% end %>
       <% if (game.steam_rating_percent > 0) %>
         <li>Steam Rating: <%= game.steam_rating_percent %>%</li>
       <% end %>

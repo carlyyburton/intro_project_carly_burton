@@ -1,9 +1,12 @@
 <div class="about">
   <h3>About</h3>
-  <p>This app uses the CheapShark API to display PC games that are currently on sale. Browse through the games or search for a specific game.
-  The information includes the game title, sale price, normal, price, percentage saved, and the steam ratings!</p>
-  <p>The second dataset consists of data from FreeToGame.com. This is a list of games that are free to play, with a link to that specific game.</p>
-  <p>The faker section of this app contains fake games using faker generated data. This includes a game title, genre, and platform!</p>
+  <p>This app uses 3 different sources to pull data from. First is the CheapShark API to display PC games that are currently on sale.
+   Browse through the games or search for a specific game title to see if it is on sale.
+  The information includes the game title, sale price, normal, price, percentage saved, the steam ratings, and the game thumbnail.</p>
+  <p>The second data source consists of data from the FreeToGame.com API. This is a list of games that are free to play, with a link to that specific game. The data pulled from this source includes
+  title, genre, description, game URL, and the game thumbnail.</p>
+  <p>The third source of data comes from Faker. This section of this app contains fake games using Faker generated data. The titles are real game titles but have a random genre and platform.</p>
+  <p>After searching for a game, you can sort the titles by ASC or DESC order.</p>
 </div>
 <span class="erd"><%= image_tag 'projectERD.png', style: 'max-width: 600px' %></span>
 
